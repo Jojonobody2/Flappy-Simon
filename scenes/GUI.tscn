@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/font.tres" type="DynamicFont" id=1]
+
+[node name="GUI" type="Node2D"]
+
+[node name="ScoreLabel" type="RichTextLabel" parent="."]
+margin_left = 5.0
+margin_right = 385.0
+margin_bottom = 57.0
+custom_fonts/normal_font = ExtResource( 1 )
+text = "Score: 0"
+
+[node name="HighscoreLabel" type="RichTextLabel" parent="."]
+margin_left = 381.0
+margin_right = 761.0
+margin_bottom = 53.0
+custom_fonts/normal_font = ExtResource( 1 )
+text = "Highcore: 0"

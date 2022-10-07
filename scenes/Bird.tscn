@@ -1,0 +1,173 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/bird.png" type="Texture" id=1]
+[ext_resource path="res://scripts/Bird.gd" type="Script" id=2]
+[ext_resource path="res://assets/wing_left.png" type="Texture" id=3]
+[ext_resource path="res://assets/banana.png" type="Texture" id=5]
+[ext_resource path="res://assets/bunny_ears.png" type="Texture" id=6]
+[ext_resource path="res://assets/sunglasses.png" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 192.5, 296 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("WingRight:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 323.044, -16.6618 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("WingRight:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("WingLeft:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -329.897, -16.6618 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("WingLeft:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "flap"
+length = 0.1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("WingRight:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 323.044, -16.6618 ), Vector2( 246.574, 59.8088 ), Vector2( 323.044, -16.6618 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("WingRight:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 60.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("WingLeft:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -329.897, -16.6618 ), Vector2( -271.073, 71.5735 ), Vector2( -329.897, -16.6618 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("WingLeft:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -60.0, 0.0 ]
+}
+
+[node name="Bird" type="KinematicBody2D"]
+scale = Vector2( 0.17, 0.17 )
+z_index = 1
+script = ExtResource( 2 )
+
+[node name="WingLeft" type="Sprite" parent="."]
+position = Vector2( -329.897, -16.6618 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 3 )
+
+[node name="WingRight" type="Sprite" parent="."]
+position = Vector2( 323.044, -16.6618 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 3 )
+flip_h = true
+
+[node name="Bird" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 0.4
+anims/RESET = SubResource( 2 )
+anims/flap = SubResource( 3 )
+
+[node name="Banana" type="Sprite" parent="."]
+visible = false
+position = Vector2( 17.6471, -270.588 )
+rotation = -2.50453
+scale = Vector2( 1.7, 1.7 )
+texture = ExtResource( 5 )
+
+[node name="BunnyEars" type="Sprite" parent="."]
+visible = false
+position = Vector2( -29.4117, -535.294 )
+texture = ExtResource( 6 )
+
+[node name="Sunglasses" type="Sprite" parent="."]
+visible = false
+position = Vector2( 5.88235, -158.824 )
+scale = Vector2( 0.45, 0.45 )
+
+[node name="1" type="Sprite" parent="Sunglasses"]
+position = Vector2( 9.53674e-07, -3.05176e-05 )
+texture = ExtResource( 7 )
+
+[node name="2" type="Sprite" parent="Sunglasses"]
+position = Vector2( 9.53674e-07, 732.027 )
+texture = ExtResource( 7 )
+flip_v = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

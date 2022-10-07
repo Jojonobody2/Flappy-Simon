@@ -1,0 +1,103 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/Settings.gd" type="Script" id=2]
+[ext_resource path="res://assets/bg_day.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.227451, 0.180392, 0.705882, 0.823529 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.227451, 0.180392, 0.705882, 0.882353 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.227451, 0.180392, 0.705882, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.227451, 0.180392, 0.705882, 0.823529 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Settings" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="BgDay" type="Sprite" parent="."]
+position = Vector2( 659, 377 )
+texture = ExtResource( 3 )
+
+[node name="FPS" type="CheckBox" parent="."]
+margin_left = 440.0
+margin_top = 151.0
+margin_right = 456.0
+margin_bottom = 167.0
+rect_scale = Vector2( 4, 4 )
+focus_mode = 0
+custom_styles/normal = SubResource( 4 )
+
+[node name="FPS Label" type="Label" parent="."]
+margin_left = 520.0
+margin_top = 153.0
+margin_right = 762.0
+margin_bottom = 214.0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/normal = SubResource( 5 )
+text = "FPS"
+align = 1
+valign = 1
+
+[node name="Creator" type="Button" parent="."]
+margin_left = 520.0
+margin_top = 272.0
+margin_right = 760.0
+margin_bottom = 332.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "Creator"
+
+[node name="Simon" type="Button" parent="."]
+margin_left = 520.0
+margin_top = 393.0
+margin_right = 760.0
+margin_bottom = 453.0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "Simon"
+
+[node name="Back" type="Button" parent="."]
+margin_left = 520.0
+margin_top = 517.0
+margin_right = 760.0
+margin_bottom = 577.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "Back"
+
+[connection signal="toggled" from="FPS" to="." method="_on_FPS_toggled"]
+[connection signal="pressed" from="Creator" to="." method="_on_Creator_pressed"]
+[connection signal="pressed" from="Simon" to="." method="_on_Simon_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]

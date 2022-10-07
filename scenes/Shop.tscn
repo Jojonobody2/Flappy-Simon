@@ -1,0 +1,189 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/Shop.gd" type="Script" id=2]
+[ext_resource path="res://assets/bird.png" type="Texture" id=3]
+[ext_resource path="res://assets/banana.png" type="Texture" id=4]
+[ext_resource path="res://assets/bunny_ears.png" type="Texture" id=5]
+[ext_resource path="res://assets/sunglasses.png" type="Texture" id=6]
+[ext_resource path="res://assets/bg_day.png" type="Texture" id=7]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.227451, 0.180392, 0.705882, 0.882353 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.227451, 0.180392, 0.705882, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.227451, 0.180392, 0.705882, 0.823529 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.227451, 0.180392, 0.705882, 0.882353 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.227451, 0.180392, 0.705882, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.227451, 0.180392, 0.705882, 0.823529 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Shop" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="BgDay" type="Sprite" parent="."]
+position = Vector2( 659, 377 )
+texture = ExtResource( 7 )
+
+[node name="Money" type="Label" parent="."]
+margin_left = 12.0
+margin_top = 5.0
+margin_right = 220.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 1 )
+text = "0 $"
+valign = 1
+
+[node name="Back" type="Button" parent="."]
+margin_left = 520.0
+margin_top = 599.0
+margin_right = 760.0
+margin_bottom = 659.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+text = "Back"
+
+[node name="Bird Banana" type="Sprite" parent="."]
+position = Vector2( 271, 331 )
+scale = Vector2( 0.17, 0.17 )
+texture = ExtResource( 3 )
+
+[node name="Banana" type="Sprite" parent="."]
+position = Vector2( 273, 284 )
+rotation = -2.50453
+scale = Vector2( 0.29, 0.29 )
+texture = ExtResource( 4 )
+
+[node name="Label Banana" type="Label" parent="."]
+margin_left = 211.0
+margin_top = 190.0
+margin_right = 339.0
+margin_bottom = 242.0
+custom_fonts/font = ExtResource( 1 )
+text = "50 $"
+align = 1
+valign = 1
+
+[node name="Button Banana" type="Button" parent="."]
+margin_left = 193.0
+margin_top = 401.0
+margin_right = 350.0
+margin_bottom = 456.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+text = "Buy"
+
+[node name="Bird BunnyEars" type="Sprite" parent="."]
+position = Vector2( 633.14, 331 )
+scale = Vector2( 0.17, 0.17 )
+texture = ExtResource( 3 )
+
+[node name="BunnyEars" type="Sprite" parent="."]
+position = Vector2( 628.14, 239 )
+scale = Vector2( 0.17, 0.17 )
+texture = ExtResource( 5 )
+
+[node name="Label BunnyEars" type="Label" parent="."]
+margin_left = 573.14
+margin_top = 190.0
+margin_right = 701.14
+margin_bottom = 242.0
+custom_fonts/font = ExtResource( 1 )
+text = "100 $"
+align = 1
+valign = 1
+
+[node name="Button BunnyEars" type="Button" parent="."]
+margin_left = 555.14
+margin_top = 401.0
+margin_right = 712.14
+margin_bottom = 456.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+text = "Buy"
+
+[node name="Bird Sunglasses" type="Sprite" parent="."]
+position = Vector2( 983, 331 )
+scale = Vector2( 0.17, 0.17 )
+texture = ExtResource( 3 )
+
+[node name="Sunglasses" type="Sprite" parent="."]
+position = Vector2( 984, 304 )
+scale = Vector2( 0.077, 0.077 )
+
+[node name="1" type="Sprite" parent="Sunglasses"]
+position = Vector2( 9.53674e-07, -3.05176e-05 )
+texture = ExtResource( 6 )
+
+[node name="2" type="Sprite" parent="Sunglasses"]
+position = Vector2( 9.53674e-07, 732.027 )
+texture = ExtResource( 6 )
+flip_v = true
+
+[node name="Label Sunglasses" type="Label" parent="."]
+margin_left = 923.0
+margin_top = 190.0
+margin_right = 1051.0
+margin_bottom = 242.0
+custom_fonts/font = ExtResource( 1 )
+text = "200 $"
+align = 1
+valign = 1
+
+[node name="Button Sunglasses" type="Button" parent="."]
+margin_left = 905.0
+margin_top = 401.0
+margin_right = 1062.0
+margin_bottom = 456.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+text = "Buy"
+
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="Button Banana" to="." method="_on_Button_Banana_pressed"]
+[connection signal="pressed" from="Button BunnyEars" to="." method="_on_Button_BunnyEars_pressed"]
+[connection signal="pressed" from="Button Sunglasses" to="." method="_on_Button_Sunglasses_pressed"]

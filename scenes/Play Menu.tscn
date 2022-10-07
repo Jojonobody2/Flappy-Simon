@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/Play Menu.gd" type="Script" id=2]
+[ext_resource path="res://assets/bg_day.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.227451, 0.180392, 0.705882, 0.882353 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.227451, 0.180392, 0.705882, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.227451, 0.180392, 0.705882, 0.823529 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Play Menu" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="BgDay" type="Sprite" parent="."]
+position = Vector2( 659, 377 )
+texture = ExtResource( 3 )
+
+[node name="Normal Mode" type="Button" parent="."]
+margin_left = 521.0
+margin_top = 243.0
+margin_right = 761.0
+margin_bottom = 303.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "Normal"
+
+[node name="Hard Mode" type="Button" parent="."]
+margin_left = 521.0
+margin_top = 408.0
+margin_right = 761.0
+margin_bottom = 468.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+text = "Hard"
+
+[connection signal="pressed" from="Normal Mode" to="." method="_on_Normal_Mode_pressed"]
+[connection signal="pressed" from="Hard Mode" to="." method="_on_Hard_Mode_pressed"]
